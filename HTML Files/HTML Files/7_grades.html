@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <link rel="stylesheet" href="/CSS Files/homepage.css">
+    <link rel="stylesheet" href="/CSS Files/footer.css">
+</head>
+<body>
+    <h1>Grade Calculator</h1>
+<nav class="navigation">
+    <style>
+        .navbar {
+            overflow: hidden;
+            background-color: #f1c1c1;
+            font-family: Arial;
+        }
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: rgb(227, 157, 157);
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ece9bf;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #bdabab;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+    <body>
+        <div class="navbar">
+            <a href="./3_navigation.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Management
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="5_schedule.html">Schedule</a>
+                    <a href="10_finances.html">Finances</a>
+                    <a href="12_future_planning.html">Planning</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">School
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a class="dropdownitem" href="6_assignments.html">Assignments</a>
+                    <a class="dropdownitem" href="7_grades.html">Grades</a>
+                    <a class="dropdownitem" href="8_notes_templates.html">Templates</a>
+                    <a class="dropdownitem" href="9_notes.html">Notes</a>
+                </div>
+            </div>
+        </div> 
+    <form id="gradeForm">
+        <label for="assignment">Assignment 1:</label>
+        <input type="number" id="assignment" min="0" max="100" required>
+        <br>
+        <label for="assignment">Assignment 2:</label>
+        <input type="number" id="assignment" min="0" max="100" required>
+        <br>
+        <label for="assignment">Assignment 3:</label>
+        <input type="number" id="assignment" min="0" max="100" required>
+        <br>
+        <label for="assignment">Assignment 4:</label>
+        <input type="number" id="assignment" min="0" max="100" required>
+        <br>
+        <label for="assignment">Assignment 5:</label>
+        <input type="number" id="assignment" min="0" max="100" required>
+        <br>
+        <label for="assignment">Assignment 6:</label>
+        <input type="number" id="assignment" min="0" max="100" required>
+        <br>
+        <label for="assignment">Assignment 7:</label>
+        <input type="number" id="assignment" min="0" max="100" required>
+        <br>
+        <label for="assignment">Assignment 8:</label>
+        <input type="number" id="assignment" min="0" max="100" required>
+        <br>
+        <label for="midterm">Assesment 1:</label>
+        <input type="number" id="midterm" min="0" max="100" required>
+        <br>
+        <label for="midterm">Assesment 2:</label>
+        <input type="number" id="midterm" min="0" max="100" required>
+        <br>
+        <label for="midterm">Assesment 3:</label>
+        <input type="number" id="midterm" min="0" max="100" required>
+        <br>
+        <label for="midterm">Assesment 4:</label>
+        <input type="number" id="midterm" min="0" max="100" required>
+        <br>
+        <label for="final">Final Exam:</label>
+        <input type="number" id="final" min="0" max="100" required>
+        <br>
+        <label for="participation">Participation Mark:</label>
+        <input type="number" id="participation" min="0" max="100" required>
+        <br>
+        <button type="button" onclick="calculateGrade()">Calculate Grade</button>
+    </form>
+
+    <h2>Calculated Grade:</h2>
+    <p id="calculatedGrade">-</p>
+
+    <script>
+        function calculateGrade() {
+            var assignment = parseFloat(document.getElementById('assignment').value) || 0;
+            var midterm = parseFloat(document.getElementById('midterm').value) || 0;
+            var final = parseFloat(document.getElementById('final').value) || 0;
+            var participation = parseFloat(document.getElementById('participation').value) || 0;
+
+            var total = assignment + midterm + final + participation;
+            var average = total / 4;
+
+            var grade;
+
+            if (average >= 97) {
+                grade = 'A+';
+            }else if (average >= 86) {
+                grade = 'A';
+            } else if (average >= 74) {
+                grade = 'B';
+            } else if (average >= 68) {
+                grade = 'C';
+            } else if (average >= 60) {
+                grade = 'D';
+            } else {
+                grade = 'F';
+            }
+            document.getElementById('calculatedGrade').innerText = grade;
+        }
+    </script>
+<footer>
+    <p>Contact us:</p>
+    <p>at matreja_simrat@khalsaschool.ca</p>
+    <p>&copy; 2023 Student Management Services. All rights reserved.</p>
+</footer>
+</body>
+</html>

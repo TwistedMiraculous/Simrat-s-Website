@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note-Taking Templates</title>
+    <link rel="stylesheet" href="/CSS Files/homepage.css">
+
+
+    <h1>Note Taking Templates</h1>
+</head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .note-template {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .note-template h2 {
+            color: #555;
+        }
+
+        .note-template p {
+            line-height: 1.5;
+        }
+    </style>
+    <nav class="navigation">
+        <style>
+            .navbar {
+                overflow: hidden;
+                background-color: #f1c1c1;
+                font-family: Arial;
+            }
+        
+            .navbar a {
+                float: left;
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            .dropdown {
+                float: left;
+                overflow: hidden;
+            }
+            .dropdown .dropbtn {
+                font-size: 16px;
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+            .navbar a:hover, .dropdown:hover .dropbtn {
+                background-color: rgb(227, 157, 157);
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #ece9bf;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+            .dropdown-content a:hover {
+                background-color: #bdabab;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            footer {
+                text-align: center;
+                background-color: #f9f9f900;
+                padding: 10px;
+                width: 100%;
+                flex-shrink: 0;
+            }
+        </style>
+        <body>
+            <div class="navbar">
+                <a href="/HTML Files/HTML Files/3_navigation.html">Home</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Management
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="5_schedule.html">Schedule</a>
+                        <a href="10_finances.html">Finances</a>
+                        <a href="12_future_planning.html">Planning</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">School
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a class="dropdownitem" href="6_assignments.html">Assignments</a>
+                        <a class="dropdownitem" href="7_grades.html">Grades</a>
+                        <a class="dropdownitem" href="8_notes_templates.html">Templates</a>
+                        <a class="dropdownitem" href="9_notes.html">Notes</a>
+                    </div>
+                </div>
+            </div>
+<body>
+
+    <h1>Note Taking Templates</h1>
+    <div class="note-template">
+        <h2>Cornell Method</h2>
+        <p><strong>Cue Column:</strong> Keywords or questions go here.</p>
+        <p><strong>Main Notes Column:</strong> Take notes here.</p>
+        <p><strong>Summary:</strong> Summarize the information in this section.</p>
+    </div>
+    <div class="note-template">
+        <h2>Blurting Method</h2>
+        <p>Write down everything that comes to your mind related to the topic. Don't worry about order or structure.</p>
+    </div>
+    <div class="note-template">
+        <h2>Outlining Method</h2>
+        <p><strong>Main Topic:</strong></p>
+        <ul>
+            <li>Subtopic 1</li>
+            <li>Subtopic 2</li>
+            <li>Subtopic 3</li>
+        </ul>
+    </div>
+    <div class="note-template">
+        <h2>Mind Mapping Method</h2>
+        <!-- reminder to add a picture here as an example or a SVG) -->
+        <p>Create a central idea and branch out with related concepts.</p>
+    </div>
+    <div class="note-template">
+        <h2>Charting Method</h2>
+        <!-- Insert a table with columns and rows -->
+        <p>Create a table with columns and rows to organize information.</p>
+    </div>
+    <div class="note-template">
+        <h2>Sentence Method</h2>
+        <p>Write complete sentences to summarize key points.</p>
+    </div>
+    <div class="note-template">
+        <h2>Quadrant Method</h2>
+        <!-- Insert a visual representation of a quadrant (e.g., an image or SVG) -->
+        <p>Divide the page into four quadrants to organize information.</p>
+    </div>
+    <script>
+        function selectTemplate() {
+            var templateSelector = document.getElementById("templateSelector");
+            var selectedTemplate = templateSelector.value;
+
+            var allTemplates = document.getElementsByClassName("note-template");
+            for (var i = 0; i < allTemplates.length; i++) {
+                allTemplates[i].style.display = "none";
+            }
+            var selectedTemplateElement = document.getElementById(selectedTemplate + "Template");
+            if (selectedTemplateElement) {
+                selectedTemplateElement.style.display = "block";
+            }
+        }
+    </script>
+    <footer>
+        <p>Contact us:</p>
+        <p>at matreja_simrat@khalsaschool.ca</p>
+        <p>&copy; 2023 Student Management Services. All rights reserved.</p>
+    </footer>
+</body>
+</html>

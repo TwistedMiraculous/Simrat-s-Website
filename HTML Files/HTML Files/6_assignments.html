@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Tracker</title>
+    <link rel="stylesheet" href="/CSS Files/homepage.css">
+    <link rel="stylesheet" href="/CSS Files/footer.css">
+</head>
+<body>
+    <h1>Assignment Tracker</h1>
+    <style>
+    #legend {
+        margin-top: 20px;
+        text-align: left;
+    }
+    #legend div {
+        display: inline-block;
+        margin-right: 20px;
+    }
+    #checklist {
+        width: 80%;
+        margin: 20px auto;
+        text-align: left;
+    }
+    .subject {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+</style>
+<nav class="navigation">
+    <style>
+        .navbar {
+            overflow: hidden;
+            background-color: #f1c1c1;
+            font-family: Arial;
+        }
+    
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: rgb(227, 157, 157);
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ece9bf;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #bdabab;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+    <body>
+        <div class="navbar">
+            <a href="./3_navigation.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Management
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="5_schedule.html">Schedule</a>
+                    <a href="10_finances.html">Finances</a>
+                    <a href="12_future_planning.html">Planning</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">School
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a class="dropdownitem" href="6_assignments.html">Assignments</a>
+                    <a class="dropdownitem" href="7_grades.html">Grades</a>
+                    <a class="dropdownitem" href="8_notes_templates.html">Templates</a>
+                    <a class="dropdownitem" href="9_notes.html">Notes</a>
+                </div>
+            </div>
+        </div>
+    <div id="legend">
+        <div class="subject" style="background-color: #FF7F50;"></div><span>English</span>
+        <div class="subject" style="background-color: #87CEEB;"></div><span>Math</span>
+        <div class="subject" style="background-color: #90EE90;"></div><span>Science</span>
+        <div class="subject" style="background-color: #719bc4;"></div><span>Socials</span>
+        <div class="subject" style="background-color: #ddee90;"></div><span>Careers</span>
+        <div class="subject" style="background-color: #c090ee;"></div><span>Elective</span>
+        <div class="subject" style="background-color: #ec90ee;"></div><span>Physical Ed</span>
+        <div class="subject" style="background-color: #ee90c4;"></div><span>Other</span>
+    </div>
+
+    <div id="checklist">
+        <h2>Add Assignment</h2>
+        <input type="text" id="assignmentInput" placeholder="Assignment name">
+        <button onclick="addAssignment()">Add</button>
+
+        <h2>Assignments</h2>
+        <ul id="assignmentList"></ul>
+    </div>
+
+    <script>
+        function addAssignment() {
+            var assignmentInput = document.getElementById('assignmentInput');
+            var assignmentList = document.getElementById('assignmentList');
+            var assignmentName = assignmentInput.value.trim();
+
+            if (assignmentName !== '') {
+                var listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <input type="checkbox" id="checkbox_${assignmentName}" onclick="toggleCompletion('${assignmentName}')">
+                    <label for="checkbox_${assignmentName}">${assignmentName}</label>
+                    <input type="color" id="colorPicker_${assignmentName}" onchange="changeColor('${assignmentName}')" value="#FF7F50">
+                    <ul id="subtasks_${assignmentName}"></ul>
+                `;
+                assignmentList.appendChild(listItem);
+                assignmentInput.value = '';
+            }
+        }
+        function toggleCompletion(assignmentName) {
+            var checkbox = document.getElementById(`checkbox_${assignmentName}`);
+            var label = document.querySelector(`label[for="checkbox_${assignmentName}"]`);
+            var subtasks = document.getElementById(`subtasks_${assignmentName}`);
+            if (checkbox.checked) {
+                label.style.textDecoration = 'line-through';
+                subtasks.style.opacity = '0.5';
+            } else {
+                label.style.textDecoration = 'none';
+                subtasks.style.opacity = '1';
+            }
+        }
+
+        function changeColor(assignmentName) {
+            var colorPicker = document.getElementById(`colorPicker_${assignmentName}`);
+            var subject = document.querySelector(`.subject`);
+            subject.style.backgroundColor = colorPicker.value;
+        }
+    </script>
+<footer>
+    <p>Contact us:</p>
+    <p>at matreja_simrat@khalsaschool.ca</p>
+    <p>&copy; 2023 Student Management Services. All rights reserved.</p>
+</footer>
+</body>
+</html>   

@@ -1,0 +1,59 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    text-align: center;
+}
+h1 {
+    color: #333;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    
+    border-radius: 5px;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+form {
+    text-align: left;
+    padding: 10px;
+}
+input {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* adds style to the span elements in the dropdown */
+.dropdown span {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Styles for span elements when hovered */
+.dropdown:hover span {
+    background-color: #555;
+}

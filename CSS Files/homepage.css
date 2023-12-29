@@ -1,0 +1,19 @@
+header{
+    background-color: rgb(142, 142, 185);
+}
+.content{
+
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    text-align: center;
+}
+footer{
+    background-color: #A0D2EB;
+    color: rgb(0, 0, 0);
+    text-align: left;
+}
+#buttonContainer {
+    margin-top: 50px; 
+}

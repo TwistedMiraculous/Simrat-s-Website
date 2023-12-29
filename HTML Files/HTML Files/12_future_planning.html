@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planning for the Future</title>
+    <link rel="stylesheet" href="/CSS Files/homepage.css">
+    <link rel="stylesheet" href="/CSS Files/footer.css">
+    <h1>Planning for the Future</h1>
+</head>
+<nav class="navigation">
+    <style>
+        .navbar {
+            overflow: hidden;
+            background-color: #f1c1c1;
+            font-family: Arial;
+        }
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: rgb(227, 157, 157);
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ece9bf;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #bdabab;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+    <body>
+        <div class="navbar">
+            <a href="./3_navigation.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Management
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="5_schedule.html">Schedule</a>
+                    <a href="10_finances.html">Finances</a>
+                    <a href="12_future_planning.html">Planning</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">School
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a class="dropdownitem" href="6_assignments.html">Assignments</a>
+                    <a class="dropdownitem" href="7_grades.html">Grades</a>
+                    <a class="dropdownitem" href="8_notes_templates.html">Templates</a>
+                    <a class="dropdownitem" href="9_notes.html">Notes</a>
+                </div>
+            </div>
+        </div>
+<body>
+<br>
+    <form id="planningForm">
+        <h2>Set Goals</h2>
+        <label for="goal">Goal:</label>
+        <input type="text" id="goal" placeholder="e.g., Learn a new language">
+        <button type="button" onclick="addGoal()">Add Goal</button>
+
+        <h2>To-Do List</h2>
+        <label for="task">Task:</label>
+        <input type="text" id="task" placeholder="e.g., Complete online course">
+        <button type="button" onclick="addTask()">Add Task</button>
+
+        <h2>Notes</h2>
+        <label for="note">Note:</label>
+        <textarea id="note" placeholder="Write down your thoughts..."></textarea>
+        <button type="button" onclick="addNote()">Add Note</button>
+    </form>
+
+    <div id="goals">
+        <h2>Goals</h2>
+        <ul id="goalList"></ul>
+    </div>
+
+    <div id="todo">
+        <h2>To-Do List</h2>
+        <ul id="taskList"></ul>
+    </div>
+
+    <div id="notes">
+        <h2>Notes</h2>
+        <ul id="noteList"></ul>
+    </div>
+
+    <script>
+        function addGoal() {
+            var goalInput = document.getElementById('goal');
+            var goalList = document.getElementById('goalList');
+            var goalText = goalInput.value.trim();
+
+            if (goalText !== '') {
+                var listItem = document.createElement('li');
+                listItem.textContent = goalText;
+                goalList.appendChild(listItem);
+                goalInput.value = '';
+            }
+        }
+
+        function addTask() {
+            var taskInput = document.getElementById('task');
+            var taskList = document.getElementById('taskList');
+            var taskText = taskInput.value.trim();
+
+            if (taskText !== '') {
+                var listItem = document.createElement('li');
+                listItem.textContent = taskText;
+                taskList.appendChild(listItem);
+                taskInput.value = '';
+            }
+        }
+
+        function addNote() {
+            var noteInput = document.getElementById('note');
+            var noteList = document.getElementById('noteList');
+            var noteText = noteInput.value.trim();
+
+            if (noteText !== '') {
+                var listItem = document.createElement('li');
+                listItem.textContent = noteText;
+                noteList.appendChild(listItem);
+                noteInput.value = '';
+            }
+        }
+    </script>
+<footer>
+    <p>Contact us:</p>
+    <p>at matreja_simrat@khalsaschool.ca</p>
+    <p>&copy; 2023 Student Management Services. All rights reserved.</p>
+</footer>
+</body>
+</html>

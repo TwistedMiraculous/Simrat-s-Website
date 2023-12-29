@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Management</title>
+    <link rel="stylesheet" href="/CSS Files/homepage.css">
+    <link rel="stylesheet" href="/CSS Files/footer.css">
+    <h1>Financial Management</h1>
+</head>
+<nav class="navigation">
+    <style>
+        .navbar {
+            overflow: hidden;
+            background-color: #f1c1c1;
+            font-family: Arial;
+        }
+    
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: rgb(227, 157, 157);
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ece9bf;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #bdabab;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+    <body>
+        <div class="navbar">
+            <a href="./3_navigation.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Management
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="5_schedule.html">Schedule</a>
+                    <a href="10_finances.html">Finances</a>
+                    <a href="12_future_planning.html">Planning</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">School
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a class="dropdownitem" href="6_assignments.html">Assignments</a>
+                    <a class="dropdownitem" href="7_grades.html">Grades</a>
+                    <a class="dropdownitem" href="8_notes_templates.html">Templates</a>
+                    <a class="dropdownitem" href="9_notes.html">Notes</a>
+                </div>
+            </div>
+        </div>
+<body>
+<br>
+    <form id="financialForm">
+        <h2>Income</h2>
+        <label for="incomeDescription">Description:</label>
+        <input type="text" id="incomeDescription" placeholder="e.g., Salary">
+
+        <label for="incomeAmount">Amount:</label>
+        <input type="number" id="incomeAmount" placeholder="Enter income amount">
+
+        <button type="button" onclick="addIncome()">Add Income</button>
+
+        <h2>Expenses</h2>
+        <label for="expenseDescription">Description:</label>
+        <input type="text" id="expenseDescription" placeholder="e.g., Rent">
+
+        <label for="expenseAmount">Amount:</label>
+        <input type="number" id="expenseAmount" placeholder="Enter expense amount">
+
+        <button type="button" onclick="addExpense()">Add Expense</button>
+    </form>
+
+    <div id="summary">
+        <h2>Financial Summary</h2>
+        <p>Total Income: $<span id="totalIncome">0.00</span></p>
+        <p>Total Expenses: $<span id="totalExpenses">0.00</span></p>
+        <p>Net Income: $<span id="netIncome">0.00</span></p>
+    </div>
+
+    <script>
+        function addIncome() {
+            var incomeDescription = document.getElementById('incomeDescription').value;
+            var incomeAmount = parseFloat(document.getElementById('incomeAmount').value) || 0;
+
+            // Add logic to store or process income data as needed
+
+            updateSummary();
+        }
+
+        function addExpense() {
+            var expenseDescription = document.getElementById('expenseDescription').value;
+            var expenseAmount = parseFloat(document.getElementById('expenseAmount').value) || 0;
+
+            // Add logic to store or process expense data as needed
+
+            updateSummary();
+        }
+
+        function updateSummary() {
+            // In a real application, you would fetch the data and calculate the summary dynamically
+            var totalIncome = 5000.00; // Placeholder value, replace with actual data
+            var totalExpenses = 2000.00; // Placeholder value, replace with actual data
+
+            var netIncome = totalIncome - totalExpenses;
+
+            document.getElementById('totalIncome').innerText = totalIncome.toFixed(2);
+            document.getElementById('totalExpenses').innerText = totalExpenses.toFixed(2);
+            document.getElementById('netIncome').innerText = netIncome.toFixed(2);
+        }
+    </script>
+<footer>
+    <p>Contact us:</p>
+    <p>at matreja_simrat@khalsaschool.ca</p>
+    <p>&copy; 2023 Student Management Services. All rights reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management Webpage Sign In</title>
+    <link rel="stylesheet" href="/CSS Files/homepage.css">
+    <link rel="stylesheet" href="/CSS Files/stylization.css">
+    <link rel="stylesheet" href="/CSS Files/footer.css">
+</head>
+<body>
+
+  <h1>Welcome to Student Management Services</h1>
+
+  <div class="dropdown">
+    <span>Sign Up</span>
+    <div class="dropdown-content">
+        <form id="signupForm">
+            <h2>Sign Up</h2>
+            <label for="signup-fname">First name:</label><br>
+            <input type="text" id="signup-fname" name="fname" value=""><br>
+            <label for="signup-lname">Last name:</label><br>
+            <input type="text" id="signup-lname" name="lname" value=""><br>
+            <label for="signup-email">Email address:</label><br>
+            <input type="text" id="signup-email" name="email" value=""><br>
+            <label for="signup-age">Age:</label><br>
+            <input type="text" id="signup-age" name="age" value=""><br>
+            <label for="signup-year">Year of Graduation:</label><br>
+            <input type="text" id="signup-year" name="year_of_graduation" value=""><br>
+            <label for="signup-password">Password:</label><br>
+            <input type="password" id="signup-password" name="password" value=""><br><br>
+            <button type="button" onclick="signup()">Sign Up</button>
+        </form>
+    </div>
+</div>
+
+<div class="dropdown">
+    <span>Login</span>
+    <div class="dropdown-content">
+        <form id="loginForm">
+            <h2>Login</h2>
+            <label for="login-fname">First name:</label><br>
+            <input type="text" id="login-fname" name="fname" value=""><br>
+            <label for="login-email">Email address:</label><br>
+            <input type="text" id="login-email" name="email" value=""><br>
+            <label for="login-password">Password:</label><br>
+            <input type="password" id="login-password" name="password" value=""><br><br>
+            <button type="button" onclick="login()">Login</button>
+        </form>
+    </div>
+</div>
+<script src="/Javascript/signup.js"></script>
+<script src="/Javascript/login.js"></script>
+
+
+<footer>
+  <p>Contact us:</p>
+  <p>Email: matreja_simrat@khalsaschool.ca</p>
+  <p>&copy; 2023 Student Management Services. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
